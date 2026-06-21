@@ -1,2 +1,2 @@
-*   **Simpan & Upload:** Setelah dipindahkan, simpan perubahan tersebut, lalu lakukan `git add .`, `git commit`, dan `git push` ke GitHub seperti biasa.
-*   **Hubungkan Ulang:** Setelah file di GitHub sudah bersih dan file `requirements.txt` sudah ada di luar, baru buka **Railway.app** lagi dan hubungkan repositori Anda.
+Flask
+gunicorn
