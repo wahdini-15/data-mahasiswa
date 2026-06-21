@@ -1,0 +1,116 @@
+/* --- 1. RESET & GLOBAL --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    min-height: 100vh; 
+    width: 100%; 
+    overflow-x: hidden; 
+}
+
+/* --- 2. AUTH PAGE (LOGIN & SIGNUP) --- */
+.auth-page { 
+    background: #D1B3D4; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+    min-height: 100vh;
+}
+
+.header-wrapper { text-align: center; margin-bottom: 20px; }
+.header-wrapper img { width: 150px; height: auto; }
+.header-wrapper h1 { color: #6a1b9a; font-size: 24px; margin-top: -10px; }
+
+/* Kartu Login/Signup */
+.auth-card { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+    width: 100%; 
+    max-width: 750px; 
+}
+
+.auth-left { flex: 1; min-width: 0; }
+.auth-right { flex: 1; display: flex; justify-content: center; }
+.auth-right img { 
+    width: 100%; 
+    max-width: 250px; 
+    filter: sepia(100%) hue-rotate(220deg) saturate(300%); 
+}
+
+/* --- 3. KOMPONEN FORM --- */
+label { color: #6a1b9a; font-weight: bold; display: block; margin-bottom: 5px; text-align: left; }
+input[type="text"], input[type="password"] { 
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 15px; 
+    border: 1px solid #6a1b9a; 
+    border-radius: 8px; 
+}
+button { 
+    width: 100%; 
+    padding: 12px; 
+    background: #6a1b9a; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: 0.3s;
+}
+button:hover { background: #5a1485; }
+a { color: #6a1b9a; font-weight: bold; text-decoration: none; display: block; margin-top: 15px; }
+
+/* --- 4. RESPONSIVE (HP) --- */
+@media screen and (max-width: 768px) {
+    .auth-card {
+        flex-direction: column; 
+        padding: 25px;
+        max-width: 95%; 
+    }
+    
+    .auth-right { display: none; }
+    
+    .auth-left { width: 100%; }
+    
+    .header-wrapper img { width: 120px; }
+}
+
+/* --- TAMPILAN RESPONSIVE (HP, TABLET, LAPTOP) --- */
+
+/* 1. Untuk Tablet (Layar max 992px) */
+@media (max-width: 992px) {
+    .auth-card { 
+        width: 90%; /* Lebar kartu sedikit mengecil */
+        gap: 20px; 
+    }
+}
+
+/* 2. Untuk HP (Layar max 768px) */
+@media (max-width: 768px) {
+    /* Layout berubah dari mendatar menjadi bertumpuk */
+    .auth-card { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 25px; 
+    }
+    
+    /* Gambar ilustrasi disembunyikan agar form tetap proporsional */
+    .auth-right { display: none; }
+    
+    /* Ukuran logo sedikit mengecil agar tidak memakan ruang */
+    .header-wrapper img { width: 150px; }
+    .header-wrapper h1 { font-size: 20px; }
+}
+
+/* 3. Untuk HP Kecil (Layar max 480px) */
+@media (max-width: 480px) {
+    .auth-page { padding: 10px; }
+    .auth-card { padding: 15px; border-radius: 15px; }
+    .header-wrapper img { width: 120px; }
+}

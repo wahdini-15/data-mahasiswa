@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="header-card" style="margin-bottom: 40px; text-align: center;">
+        <h1>Selamat Datang</h1>
+        <p>Di Sistem Informasi Manajemen Data Mahasiswa.</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card primary">
+            <p>TOTAL MAHASISWA</p>
+            <h2>{{ total_mahasiswa }}</h2>
+        </div>
+        <div class="stat-card">
+            <p>STATUS</p>
+            <h2>Online</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

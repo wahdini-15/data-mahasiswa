@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun - Universitas Pamulang</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-page">
+
+    <div class="header-wrapper">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        <h1>Universitas Pamulang</h1>
+    </div>
+
+    <div class="auth-card">
+        <div class="auth-left">
+            <h2>Daftar Akun</h2>
+            
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div style="color: #d32f2f; margin-bottom: 15px; font-weight: bold; background: #ffebee; padding: 10px; border-radius: 5px;">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST">
+                <label>NIM</label> 
+                <input type="text" name="nim" placeholder="Masukkan NIM Anda" required>
+                
+                <label>Nama Lengkap</label> 
+                <input type="text" name="nama" placeholder="Masukkan Nama Lengkap" required>
+                
+                <label>Password</label> 
+                <input type="password" id="pass_signup" name="password" placeholder="Buat Password" required>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" onclick="let x=document.getElementById('pass_signup'); x.type=(x.type==='password'?'text':'password')"> 
+                    Tampilkan Sandi
+                </div>
+                
+                <button type="submit">Daftar</button>
+            </form>
+            <p style="margin-top: 15px;">Sudah punya akun? <a href="/login">Login di sini</a></p>
+        </div>
+        
+        <div class="auth-right">
+            <img src="https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-7875.jpg" alt="Signup">
+        </div>
+    </div>
+
+</body>
+</html>

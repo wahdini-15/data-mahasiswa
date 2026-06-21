@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-page">
+    <div class="header-wrapper">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        <h1>Universitas Pamulang</h1>
+    </div>
+    
+    <div class="auth-card">
+        <div class="auth-left">
+            <h2>Login Mahasiswa</h2>
+            <form method="POST">
+                <label>NIM</label> 
+                <input type="text" name="nim" required>
+                
+                <label>Password</label> 
+                <input type="password" id="pass_login" name="password" required>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" onclick="let x=document.getElementById('pass_login'); x.type=(x.type==='password'?'text':'password')"> 
+                    Tampilkan Sandi
+                </div>
+                
+                <button type="submit">Masuk</button>
+            </form>
+            <p>Belum punya akun? <a href="/signup">Daftar di sini</a></p>
+        </div>
+        
+        <div class="auth-right">
+            <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg" alt="Login">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<div style="padding:20px; max-width: 500px; margin: auto; background: white; border-radius: 10px;">
+    <h2>Edit Data Mahasiswa</h2>
+    <form action="{{ url_for('edit', nim=mhs.nim) }}" method="POST">
+        <label>Nama:</label><br>
+        <input type="text" name="nama" value="{{ mhs.nama }}" style="width:100%; padding:8px;"><br><br>
+        
+        <label>Jurusan:</label><br>
+        <input type="text" name="jurusan" value="{{ mhs.jurusan }}" style="width:100%; padding:8px;"><br><br>
+        
+        <label>Email:</label><br>
+        <input type="email" name="email" value="{{ mhs.email }}" style="width:100%; padding:8px;"><br><br>
+        
+        <label>Telepon:</label><br>
+        <input type="text" name="telp" value="{{ mhs.telp }}" style="width:100%; padding:8px;"><br><br>
+        
+        <button type="submit" style="padding: 10px 20px; background: #6a1b9a; color: white; border: none; border-radius: 5px;">
+            Simpan Perubahan
+        </button>
+        <a href="/mahasiswa" style="margin-left: 10px;">Batal</a>
+    </form>
+</div>
+{% endblock %}

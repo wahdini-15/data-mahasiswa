@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="main-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <h2 style="color:white; margin: 0; padding: 20px;">Universitas Pamulang</h2>
+            <nav>
+                <a href="/dashboard" class="{{ 'active' if request.path == '/dashboard' }}">Dashboard</a>
+                <a href="/mahasiswa" class="{{ 'active' if request.path == '/mahasiswa' }}">Data Mahasiswa</a>
+                <a href="/laporan" class="{{ 'active' if request.path == '/laporan' }}">Laporan</a>
+                <a href="/pengaturan" class="{{ 'active' if request.path == '/pengaturan' }}">Pengaturan</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header id="main-header">
+                <div class="user-info">
+                    Halo, {{ session.get('nama_lengkap', 'User') }} | 
+                    <a href="/logout">Logout</a>
+                </div>
+
+                <div class="header-bottom">
+                    <button class="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('active')">☰</button>
+                    <div class="page-title">{{ title }}</div>
+                </div>
+            </header>
+            
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

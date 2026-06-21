@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div style="padding:20px; background:white; border-radius:10px;">
+    <h2>Detail Mahasiswa</h2>
+    <p>NIM: {{ mhs.nim }}</p>
+    <p>Nama: {{ mhs.nama }}</p>
+    <p>Jurusan: {{ mhs.jurusan }}</p>
+    <p>Email: {{ mhs.email }}</p>
+    <p>Telepon: {{ mhs.telp }}</p>
+    <a href="/mahasiswa">Kembali</a>
+</div>
+{% endblock %}

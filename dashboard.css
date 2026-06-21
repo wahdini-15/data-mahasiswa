@@ -1,0 +1,75 @@
+/* --- 1. RESET & GLOBAL --- */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #f0f2f5; min-height: 100vh; }
+
+/* --- 2. LAYOUT UTAMA --- */
+.main-wrapper { display: flex; min-height: 100vh; }
+
+/* --- 3. SIDEBAR (UNGU) --- */
+.sidebar { 
+    width: 260px; background: #b14aba; color: white; padding: 25px; flex-shrink: 0; 
+}
+.sidebar h2 { margin-bottom: 30px; font-size: 24px; }
+.sidebar nav a { 
+    display: block; color: white; padding: 15px; margin-bottom: 10px; 
+    text-decoration: none; border-radius: 10px; transition: 0.3s;
+}
+.sidebar nav a.active { background: #95459c; font-weight: bold; }
+
+/* --- 4. HEADER (PUTIH) --- */
+.main-content { flex: 1; display: flex; flex-direction: column; }
+header { 
+    background: #ffffff !important; padding: 20px 40px; 
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.page-title { font-size: 20px; font-weight: bold; color: #6a1b9a; }
+.user-info { font-weight: bold; color: #333 !important; }
+.user-info a { color: #6a1b9a; text-decoration: underline; }
+
+/* --- 5. DASHBOARD & STATISTIK --- */
+.container { padding: 40px; }
+.header-card { 
+    background: #b14aba; padding: 30px; border-radius: 20px; 
+    margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;
+}
+.stats-grid { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
+.stat-card { 
+    background: #b14aba; padding: 30px 50px; border-radius: 20px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; width: 280px;
+}
+.stat-card h2 { color: #fff; font-size: 32px; margin-top: 10px; }
+.stat-card p { color: #fff; font-weight: bold; font-size: 14px; text-transform: uppercase; }
+
+/* --- 6. TABEL --- */
+.data-table { 
+    width: 100%; background: white; border-radius: 20px; 
+    border-collapse: collapse; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+.data-table th { background: #f8f9fa; color: #6a1b9a; padding: 20px; text-align: left; }
+.data-table td { padding: 20px; border-bottom: 1px solid #eee; }
+.btn-delete { background: #ff4d4d; color: white; padding: 8px 15px; border-radius: 8px; text-decoration: none; font-size: 12px; }
+
+/* --- 7. STYLING DETAIL & EDIT --- */
+.content-card {
+    background: white; padding: 40px; border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 600px; margin: 20px auto;
+}
+.detail-item { margin-bottom: 15px; font-size: 16px; }
+.detail-item strong { display: inline-block; width: 100px; color: #555; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
+.form-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; }
+.btn-submit { background: #6a1b9a; color: white; padding: 12px 25px; border: none; border-radius: 10px; cursor: pointer; }
+
+/* --- 8. RESPONSIVE MOBILE --- */
+.menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #6a1b9a; }
+
+@media screen and (max-width: 768px) {
+    header { flex-direction: column; align-items: flex-start; padding: 15px !important; }
+    .user-info { order: -1; align-self: flex-end; font-size: 13px; margin-bottom: 10px; }
+    .menu-toggle { display: block; }
+    .sidebar { display: none; position: fixed; top: 0; left: 0; width: 260px; height: 100%; z-index: 999; }
+    .sidebar.active { display: block; }
+    .stats-grid { flex-direction: column; align-items: center; }
+}
